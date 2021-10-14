@@ -13,3 +13,13 @@ To execute it, run ```./PongCPP```
     - CMake: Build
 
 if you want to quickly clean the repository, run task "Git: restore repository"
+
+## Running on Raspberry Pi
+Run the following Commands to setup a working environment
+```
+sudo apt install cmake
+mkdir build
+cd build
+cmake ..
+make
+```
