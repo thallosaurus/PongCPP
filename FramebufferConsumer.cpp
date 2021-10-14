@@ -1,5 +1,6 @@
 #include "include/Framebuffer.h"
 #include "include/FramebufferConsumer.h"
+#include "include/structs.h"
 
 namespace Pong
 {
@@ -17,9 +18,7 @@ namespace Pong
             y = 0;
             // fb->addConsumer(this);
         }
-        virtual ~FramebufferConsumer()
-        {
-        }
+        virtual ~FramebufferConsumer()=0;
 
         void overlay()
         {

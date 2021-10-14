@@ -1,3 +1,6 @@
+#ifndef PONG_UTILS_H
+#define PONG_UTILS_H
+
 #include <sys/ioctl.h>
 #include <unistd.h>
 
@@ -32,3 +35,5 @@ namespace Pong
         exit(0);
     }
 }
+
+#endif

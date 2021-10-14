@@ -1,3 +1,8 @@
+#ifndef PONG_KEYBOARD_HANDLER_H
+#define PONG_KEYBOARD_HANDLER_H
+
+#include "Player.h"
+
 namespace Pong
 {
     class KeyboardHandler
@@ -5,7 +10,7 @@ namespace Pong
     private:
         static char *pressedKey;
         pthread_t handlerThread;
-        bool running = true;
+        bool running;
 
     public:
         KeyboardHandler();
@@ -19,3 +24,5 @@ namespace Pong
         virtual void onKeyPress(char keycode) = 0;
     };
 }
+
+#endif

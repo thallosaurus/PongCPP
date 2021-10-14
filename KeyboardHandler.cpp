@@ -1,6 +1,7 @@
 #include "include/structs.h"
 #include "include/Display.h"
 #include <pthread.h>
+#include <csignal>
 #include "include/KeyboardHandler.h"
 #include <iostream>
 #include "include/config.h"

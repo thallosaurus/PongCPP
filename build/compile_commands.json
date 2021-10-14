@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/jarvis/code/cpp/10-game/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7    -g   -o CMakeFiles/PongCPP.dir/main.cpp.o -c /home/jarvis/code/cpp/10-game/main.cpp",
-  "file": "/home/jarvis/code/cpp/10-game/main.cpp"
-}
-]

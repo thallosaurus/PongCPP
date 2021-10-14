@@ -1,23 +1,20 @@
 #include "include/Player.h"
 #include "include/FramebufferConsumer.h"
 #include "include/KeyboardHandler.h"
-#include "include/MapElement.h"
+#include "include/structs.h"
+// #include "include/MapElement.h"
 
 namespace Pong
 {
 
     class Player : public FramebufferConsumer, public KeyboardHandler
     {
-    private:
-        const char character = 'O';
-        // KeyboardHandler kbd;
-
     public:
         Player(Framebuffer *f) : FramebufferConsumer(f), KeyboardHandler()
         {
             // kbd = KeyboardHandler();
-            struct DisplayStruct *s = start();
-            // struct Display::DisplayStruct f = start();
+            // struct DisplayStruct *s = start();
+            struct DisplayStruct f = start();
             // s = &f;
         }
 
@@ -42,5 +39,9 @@ namespace Pong
                 break;
             }
         }
+
+    private:
+        const char character = 'O';
+        // KeyboardHandler kbd;
     };
 }

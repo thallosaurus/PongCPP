@@ -1,7 +1,14 @@
+#ifndef PONG_DISPLAY_H
+#define PONG_DISPLAY_H
+
 #include "Framebuffer.h"
+#include "structs.h"
+#include <pthread.h>
 
 namespace Pong
 {
+    struct DisplayStruct;
+
     class Display
     {
     public:
@@ -21,3 +28,5 @@ namespace Pong
     };
 
 }
+
+#endif

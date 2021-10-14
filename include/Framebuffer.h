@@ -1,3 +1,6 @@
+#ifndef PONG_FRAMEBUFFER_H
+#define PONG_FRAMEBUFFER_H
+
 #include <iostream>
 
 namespace Pong
@@ -15,11 +18,6 @@ namespace Pong
         // char currentConsumerCount = 0;
 
         ~Framebuffer();
-
-        // void addConsumer(FramebufferConsumer cons) {
-        // consumers[currentConsumerCount] = cons;
-        // currentConsumerCount++;
-        // }
 
         void resetBuffer();
 
@@ -41,3 +39,5 @@ namespace Pong
         friend Framebuffer &operator<<(Framebuffer &fb, const MapElement me);
     };
 }
+
+#endif

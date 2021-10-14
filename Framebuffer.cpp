@@ -1,7 +1,7 @@
 #include "include/config.h"
 #include "include/Framebuffer.h"
-#include "include/MapElement.h"
 #include "include/Utils.h"
+#include "include/structs.h"
 #include <iostream>
 
 

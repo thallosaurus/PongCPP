@@ -1,6 +1,6 @@
 // #include "include/Framebuffer.h"
-#include "include/structs.h"
 #include "include/Display.h"
+#include "include/structs.h"
 #include "include/config.h"
 #include "include/Utils.h"
 #include <chrono>

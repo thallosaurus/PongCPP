@@ -1,11 +1,12 @@
+#ifndef PONG_FRAMEBUFFER_CONSUMER_H
+#define PONG_FRAMEBUFFER_CONSUMER_H
+
 #include "Framebuffer.h"
 
 namespace Pong
 {
-    struct MapElement {
-        int x, y, width, height;
-        char data;
-    };
+    struct MapElement;
+
     class FramebufferConsumer
     {
     protected:
@@ -16,8 +17,10 @@ namespace Pong
         virtual struct MapElement *getCharacter()=0;
         Framebuffer *fb;
         FramebufferConsumer(Framebuffer *framebuffer);
-        virtual ~FramebufferConsumer();
+        virtual ~FramebufferConsumer()=0;
         void overlay();
     };
 
 }
+
+#endif
