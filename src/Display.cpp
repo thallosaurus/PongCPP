@@ -33,7 +33,7 @@ namespace Pong
         time_t delta;
 
         int frameCounter = 0;
-        while (*data->exitCondition)
+        while (data->exitCondition)
         {
             high_resolution_clock::time_point yeet = high_resolution_clock::now();
             delta = duration_cast<nanoseconds>(yeet - now).count();

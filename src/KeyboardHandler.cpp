@@ -31,7 +31,7 @@ namespace Pong
         data = (const struct DisplayStruct *)arg;
         DEBUG &&std::cout << "[DEBUG] Keyboard Handler started thread" << std::endl;
         system("stty raw -echo");
-        while (*data->exitCondition)
+        while (data->exitCondition)
         {
             char key = std::getchar();
         }
