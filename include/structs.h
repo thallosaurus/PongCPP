@@ -1,5 +1,5 @@
-#ifndef STRUCTS_H
-#define STRUCTS_H
+#ifndef PONG_STRUCTS_H
+#define PONG_STRUCTS_H
 
 #include "Display.h"
 #include "FramebufferConsumer.h"

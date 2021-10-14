@@ -7,14 +7,16 @@
 
 namespace Pong
 {
-    class Framebuffer
-    {
-    private:
-        int width, height;
-        char *fb;
 
-    public:
-        Framebuffer(const int w, const int h) : width(w), height(h)
+    // using namespace Utils;
+
+    Framebuffer &operator<<(Framebuffer &fb, const struct MapElement me)
+    {
+        fb.putElement(me);
+        return fb;
+    }
+
+    Framebuffer::Framebuffer(const int w, const int h) : width(w), height(h)
         {
             this->fb = new char[w * h + 1];
 
@@ -28,7 +30,7 @@ namespace Pong
         // std::list<FramebufferConsumer> consumers[10];
         // char currentConsumerCount = 0;
 
-        ~Framebuffer()
+        Framebuffer::~Framebuffer()
         {
             DEBUG &&std::cout << "[DEBUG]Framebuffer destroyed" << std::endl;
             delete this->fb;
@@ -39,7 +41,7 @@ namespace Pong
         // currentConsumerCount++;
         // }
 
-        void resetBuffer()
+        void Framebuffer::resetBuffer()
         {
             for (int i = 0; i < this->width * this->height; i++)
             {
@@ -48,12 +50,12 @@ namespace Pong
             this->fb[this->width * this->height] = '\0';
         }
 
-        char *getBuffer()
+        char *Framebuffer::getBuffer()
         {
             return this->fb;
         }
 
-        std::string getBufferAsString()
+        std::string Framebuffer::getBufferAsString()
         {
             std::string ret = (std::string)this->fb;
 
@@ -66,7 +68,7 @@ namespace Pong
             return ret;
         }
 
-        char getchar(int x, int y)
+        char Framebuffer::getchar(int x, int y)
         {
             if (x * y > this->width * this->height)
             {
@@ -76,7 +78,7 @@ namespace Pong
             return this->fb[IntToXY(this->width, x, y)];
         }
 
-        void putchar(char data, int x, int y)
+        void Framebuffer::putchar(char data, int x, int y)
         {
             if (x < this->width && y < this->height)
             {
@@ -85,7 +87,7 @@ namespace Pong
             }
         }
 
-        void putElement(struct MapElement e)
+        void Framebuffer::putElement(struct MapElement e)
         {
             for (int y = 0; y < e.height; y++)
             {
@@ -99,23 +101,14 @@ namespace Pong
             }
         }
 
-        int getWidth()
+        int Framebuffer::getWidth()
         {
             return width;
         }
 
-        int getHeight()
+        int Framebuffer::getHeight()
         {
             return height;
         }
 
-        friend Framebuffer &operator<<(Framebuffer &fb, const MapElement me);
-        friend Framebuffer &operator<<(Framebuffer &fb, const MapElement me);
-    };
-
-    Framebuffer &operator<<(Framebuffer &fb, const struct MapElement me)
-    {
-        fb.putElement(me);
-        return fb;
-    }
 }

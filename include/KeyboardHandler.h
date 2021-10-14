@@ -2,6 +2,7 @@
 #define PONG_KEYBOARD_HANDLER_H
 
 #include "Player.h"
+#include "pthread.h"
 
 namespace Pong
 {

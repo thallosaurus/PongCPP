@@ -4,28 +4,27 @@
 
 namespace Pong
 {
-    class FramebufferConsumer
+    // class FramebufferConsumer
+    // {
+    // protected:
+    // int x, y;
+
+    // public:
+    // Framebuffer *fb;
+
+    FramebufferConsumer::FramebufferConsumer(Framebuffer *framebuffer)
     {
-    protected:
-        int x, y;
+        fb = framebuffer;
+        x = 0;
+        y = 0;
+        // fb->addConsumer(this);
+    }
+    // virtual FramebufferConsumer::~FramebufferConsumer() = 0;
 
-    public:
-        Framebuffer *fb;
-        FramebufferConsumer(Framebuffer *framebuffer)
-        {
-            fb = framebuffer;
-            x = 0;
-            y = 0;
-            // fb->addConsumer(this);
-        }
-        virtual ~FramebufferConsumer()=0;
+    void FramebufferConsumer::overlay()
+    {
+    }
 
-        void overlay()
-        {
-        }
-
-        //This method gives its character back
-        virtual struct MapElement *getCharacter() = 0;
-    };
-
+    //This method gives its character back
+    // virtual struct MapElement *getCharacter() = 0;
 }

@@ -1,2 +1,7 @@
 build/
 main
+CMakeCache.txt
+*.cmake
+CMakeFiles/
+Makefile
+PongCPP

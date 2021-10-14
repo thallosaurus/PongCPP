@@ -2,6 +2,7 @@
 #define PONG_FRAMEBUFFER_H
 
 #include <iostream>
+#include "Utils.h"
 
 namespace Pong
 {

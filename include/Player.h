@@ -1,16 +1,16 @@
 #ifndef PONG_PLAYER_H
 #define PONG_PLAYER_H
 
-#include "Framebuffer.h"
-#include "FramebufferConsumer.h"
+// #include "Framebuffer.h"
+// #include "FramebufferConsumer.h"
 #include "KeyboardHandler.h"
 #include "structs.h"
+#include "Player.h"
 
 namespace Pong
 {
 
-    class Player : public FramebufferConsumer, public KeyboardHandler
-    {
+    class Player : public FramebufferConsumer {
     public:
         Player(Framebuffer *f);
 
@@ -19,7 +19,7 @@ namespace Pong
         virtual void onKeyPress(char keyCode) = 0;
 
     private:
-        const char character;
+        const char character = '*';
     };
 }
 

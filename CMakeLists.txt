@@ -1,10 +1,20 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(PongCPP VERSION 0.1.0)
 
-include(CTest)
-enable_testing()
+# add_custom_target(build-time-make-directory ALL
+    # COMMAND ${CMAKE_COMMAND} -E make_directory /build)
 
-add_executable(PongCPP main.cpp)
+
+# include(CTest)
+# enable_testing()
+
+file(GLOB pong_SRC
+    "include/*.h"
+     "*.cpp"
+)
+
+add_executable(PongCPP ${pong_SRC})
+# add_executable(PongCPP Display.cpp)
 target_link_libraries(PongCPP pthread)
 
 link_directories(PongCPP $PROJECT_SOURCE_DIR
