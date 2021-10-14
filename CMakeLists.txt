@@ -9,8 +9,8 @@ project(PongCPP VERSION 0.1.0)
 # enable_testing()
 
 file(GLOB pong_SRC
-    "include/*.h"
-     "*.cpp"
+    "src/include/*.h"
+     "src/*.cpp"
 )
 
 add_executable(PongCPP ${pong_SRC})

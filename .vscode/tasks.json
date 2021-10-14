@@ -25,20 +25,52 @@
         },
         {
             "type": "shell",
-            "label": "CMake: Build Debug with CMake",
+            "label": "Shell: Create Build Folder",
+            "command": "mkdir",
+            "args": [
+                "-p",
+                "build"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "CMake: Build Cache",
             "command": "/usr/bin/cmake",
             "args": [
-                "--build",
-                "${workspaceFolder}/build",
-                "--config",
-                "Debug",
-                "--target",
-                "clean"
+                "."
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
             "dependsOn": "Shell: Create Build Folder"
+        },
+        {
+            "type": "shell",
+            "label": "CMake: Build",
+            "command": "/usr/bin/cmake",
+            "args": [
+                "--build",
+                ".",
+                "--config",
+                "Debug;"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Shell: Build Cache"
+        },
+        {
+            "type": "shell",
+            "label": "Git: restore Repository",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "$(cat",
+                ".gitignore)"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
         }
     ],
     "version": "2.0.0"

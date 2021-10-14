@@ -3,7 +3,7 @@
 // #include "include/config.h"
 // #include "include/MapElement.h"
 // #include "include/DisplayStruct.h"
-// #include "include/Player.h"
+#include "include/Player.h"
 // #include "include/Framebuffer.h"
 
 // #include "include/structs.h"
@@ -15,21 +15,21 @@ using namespace Pong;
 
 int main()
 {
-    // Display d;
+    Display d;
     struct winsize terminalsize = getTerminalSize();
     std::cout << "Row: " << terminalsize.ws_row << ", Col: " << terminalsize.ws_col << std::endl;
-    // Framebuffer framebuffer = Framebuffer(terminalsize.ws_col, terminalsize.ws_row);
-    // Framebuffer *fb_ptr = &framebuffer;
+    Framebuffer framebuffer = Framebuffer(terminalsize.ws_col, terminalsize.ws_row);
+    Framebuffer *fb_ptr = &framebuffer;
     // sleep(5);
     // char data = 'B';
     // framebuffer.putchar(data, 2, 3);
 
     //You have to save this return struct, because otherwise it will get optimized away
     struct DisplayStruct l;
-    l.width = 40;
-    l.height = 80;
-    std::cout << l.width << "\t" << l.height << std::endl;
-    // l = d.start(fb_ptr);
+    // l.width = 40;
+    // l.height = 80;
+    // std::cout << l.width << "\t" << l.height << std::endl;
+    l = d.start(fb_ptr);
 
     // Player p = Player(&framebuffer);
 
