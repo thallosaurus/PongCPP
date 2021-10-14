@@ -1,4 +1,0 @@
-namespace Pong
-{
-    struct MapElement;
-}

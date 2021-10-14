@@ -1,4 +1,5 @@
-namespace Pong {
+namespace Pong
+{
     class KeyboardHandler
     {
     private:
