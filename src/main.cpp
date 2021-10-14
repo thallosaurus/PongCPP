@@ -42,18 +42,18 @@ int main()
     // Player p = Player(fb_ptr);
 
     // int i = 0;
-    while (true)
-    {
+    // while (true)
+    // {
         // me.data = i % 2000000 == 0 ? '_' :'*';
         // i++;
-    }
+    // }
+        sleep(10);
 
-    // sleep(10);
     // KeyboardHandler kbd;
     // kbd.start();
     // p.stopKeyboardHandler();
 
-    // d.stopDisplay();
+    d.stopDisplay();
 
-    sleep(1000);
+    // sleep(1000);
 }

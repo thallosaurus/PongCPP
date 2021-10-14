@@ -21,6 +21,7 @@ namespace Pong
 
         friend void stopDisplay();
         void stopDisplay();
+        void startDisplay();
 
     private:
         pthread_t displayThread;

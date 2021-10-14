@@ -8,8 +8,6 @@
 namespace Pong
 {
 
-    // using namespace Utils;
-
     Framebuffer &operator<<(Framebuffer &fb, const struct MapElement me)
     {
         fb.putElement(me);
@@ -27,19 +25,11 @@ namespace Pong
             }
         }
 
-        // std::list<FramebufferConsumer> consumers[10];
-        // char currentConsumerCount = 0;
-
         Framebuffer::~Framebuffer()
         {
-            DEBUG &&std::cout << "[DEBUG]Framebuffer destroyed" << std::endl;
             delete this->fb;
+            DEBUG &&std::cout << "[DEBUG]Framebuffer destroyed" << std::endl;
         }
-
-        // void addConsumer(FramebufferConsumer cons) {
-        // consumers[currentConsumerCount] = cons;
-        // currentConsumerCount++;
-        // }
 
         void Framebuffer::resetBuffer()
         {

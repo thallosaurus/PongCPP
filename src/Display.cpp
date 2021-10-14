@@ -33,27 +33,34 @@ namespace Pong
         time_t delta;
 
         int frameCounter = 0;
-        while (data->exitCondition)
+        // while (*data->exitCondition)
+        do
         {
             high_resolution_clock::time_point yeet = high_resolution_clock::now();
             delta = duration_cast<nanoseconds>(yeet - now).count();
             if (delta > nextFrame)
             {
-                clearConsole();
+                // clearConsole();
                 nextFrame = delta + (1000 * 1000 * 100);
                 std::string s = data->framebuffer->getBufferAsString();
                 std::cout << s;
                 frameCounter++;
+                usleep(1000 / 24);
             }
-        }
+        } while (*data->exitCondition);
         DEBUG &&std::cout << "Thread Exit, Framecount: " << frameCounter << std::endl;
         pthread_exit(NULL);
+    }
+
+    void Display::startDisplay()
+    {
+        running = true;
     }
 
     void Display::stopDisplay()
     {
         running = false;
-        pthread_join(displayThread, NULL);
+        // pthread_join(displayThread, NULL);
     }
     Display::Display()
     {

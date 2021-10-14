@@ -10,7 +10,7 @@ namespace Pong
     {
         Framebuffer *framebuffer;
         unsigned int width, height;
-        bool exitCondition;
+        bool *exitCondition;
     };
     struct MapElement
     {
